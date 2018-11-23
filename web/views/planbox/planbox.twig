@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Your Planbox Initiatives</h1>
+    </div>
+    <h3>Select the Initiative To Import From</h3>
+    <div class="list-group">
+        {% for item in content %}
+          <a class="list-group-item" href="/planbox/{{ item.id }}">{{ item.name }} - [ ID {{ item.id }} ]</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

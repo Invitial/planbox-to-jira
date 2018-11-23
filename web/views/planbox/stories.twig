@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Stories In {{ filter }} <small>{{ count }} stories</small></h1>
+    </div>
+    <ul class="list-group">
+        {% for item in stories %}
+          <li class="list-group-item"><a href="/story/{{ item.id }}">{{ item.name }}</a>
+              <p>{{ item.description|raw }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

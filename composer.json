@@ -1,0 +1,19 @@
+{
+  "require" : {
+    "silex/silex": "^1.3",
+    "monolog/monolog": "^1.4",
+    "twig/twig": "^1.8",
+    "symfony/twig-bridge": "^2",
+    "lesstif/php-jira-rest-client": "^1.9",
+    "nategood/httpful": "^0.2.20",
+    "vlucas/phpdotenv": "^2.4"
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Invitial": "lib/"
+    }
+  }
+}

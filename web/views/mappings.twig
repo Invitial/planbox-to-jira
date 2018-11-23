@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>Mapping Values</h1>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                           aria-expanded="true" aria-controls="collapseOne">
+                            STATUSES
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>JIRA</h3>
+                                <div class="list-group">
+                                    {% for item in jStatuses %}
+                                        <a class="list-group-item" href="#">[{{ item.id }}] - {{ item.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>PLANBOX</h3>
+                                <div class="list-group">
+                                    {% for item in pStatuses %}
+                                        <a class="list-group-item" href="#">{{ item }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            TYPES
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>JIRA</h3>
+                                <div class="list-group">
+                                    {% for item in jTypes %}
+                                        <a class="list-group-item" href="#">[{{ item.id }}] - {{ item.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>PLANBOX</h3>
+                                <div class="list-group">
+                                    {% for item in pTypes %}
+                                        <a class="list-group-item" href="#">{{ item }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

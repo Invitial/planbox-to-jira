@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="/"><span class="glyphicon glyphicon-home"></span> P2J</a>
+      </li>
+      {% set jiraProject = app.session.get('jiraProject') %}
+      {% if jiraProject['name'] is defined %}
+      <li>
+        <a href="/jira">1. JIRA-{{ jiraProject['key'] }}</a>
+      </li>
+      {% endif %}
+      {% set planProduct = app.session.get('planProduct') %}
+      {% if planProduct['name'] is defined %}
+      <li>
+        <a href="/planbox">2. PLAN-{{ planProduct['name'] }}</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

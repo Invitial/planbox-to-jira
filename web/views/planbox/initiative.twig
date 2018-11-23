@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Planbox {{ initiative.name }} Initiative - [ ID {{ initiative.id }} ]</h1>
+        <h1><small>{{ initiative.description }}</small></h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Iterations</h3>
+            <div class="list-group">
+                {% for item in initiative.iterations|reverse %}
+                  <a class="list-group-item" href="/stories/{{ initiative.id }}/{{ item.id }}">Iteration {{ item.num }} {{ item.timeframe|title|replace({'_' : ' '}) }} {{ item.start }} - [ ID {{ item.id }} ]</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Resources</h3>
+            <ul class="list-group">
+                {% for item in resources %}
+                    <li class="list-group-item">{{ item.name }} [ {{ item.email }} ]</li>
+                {% endfor %}
+            </ul>
+            <h3>Projects</h3>
+            <ul class="list-group">
+                {% for item in projects %}
+                    <li class="list-group-item">[{{ item.alias }}] {{ item.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

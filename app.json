@@ -1,0 +1,6 @@
+{
+  "name": "Planbox to JIRA app",
+  "description": "A little app to copy planbox tasks and subtasks over to JIRA",
+  "repository": "https://github.com/Invitial/planbox-to-jira.git",
+  "addons": []
+}

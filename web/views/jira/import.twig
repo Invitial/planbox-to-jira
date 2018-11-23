@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>Import Results</h1>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                           aria-expanded="true" aria-controls="collapseOne">
+                            USERS
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <div class="row">
+                            {% for status, users in userStatus %}
+                                <div class="col-md-6">
+                                    <h3>{{ status|upper }}</h3>
+                                    <div class="list-group">
+                                        {% for user in users %}
+                                            <a class="list-group-item" href="#">{{ user.name }} - {{ user.email }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            COMPONENTS
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <div class="row">
+                            {% for status, comps in compStatus %}
+                                <div class="col-md-6">
+                                    <h3>{{ status|upper }}</h3>
+                                    <div class="list-group">
+                                        {% for comp in comps %}
+                                            <a class="list-group-item" href="#">{{ comp.name }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ISSUES
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <div class="row">
+                            {% for status, issues in issueStatus %}
+                                <div class="col-md-6">
+                                    <h3>{{ status|upper }}</h3>
+                                    <div class="list-group">
+                                        {% for issue in issues %}
+                                            <a class="list-group-item" href="#">{{ issue.name }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
